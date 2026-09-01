@@ -12,11 +12,11 @@ def check_websites(urls):
             # Try to connect to the website (timeout after 3 seconds)
             response = urllib.request.urlopen(url, timeout=3)
             if response.status == 200:
-                print(f"[✅] ONLINE  : {url}")
+                print(f"[OK]    ONLINE  : {url}")
         except urllib.error.URLError:
-            print(f"[❌] OFFLINE : {url}")
+            print(f"[FAIL]  OFFLINE : {url}")
         except Exception as e:
-            print(f"[⚠️] ERROR   : {url} ({e})")
+            print(f"[ERROR] ERROR   : {url} ({e})")
 
 if __name__ == "__main__":
     sites_to_check = [
